@@ -1,0 +1,17 @@
+service mishow_start /system/bin/sh /system/bin/mishow.sh 1
+       class main
+       disabled
+       oneshot
+       seclabel u:r:charger:s0
+
+service mishow_stop /system/bin/sh /system/bin/mishow.sh 0
+       class main
+       disabled
+       oneshot
+       seclabel u:r:charger:s0
+
+on property:persist.vendor.mishow=true
+       start mishow_start
+
+on property:persist.vendor.mishow=false
+       start mishow_stop

@@ -1,0 +1,5 @@
+com.android.dreams.basic
+com.android.musicfx
+com.android.calculator2
+com.android.email
+com.android.exchange
